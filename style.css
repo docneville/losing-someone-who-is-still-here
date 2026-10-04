@@ -1,0 +1,62 @@
+/* Site-wide styles. Change the colors here and every page updates. */
+:root {
+  --bg: #faf7f2;
+  --text: #2e2a26;
+  --muted: #6b635b;
+  --accent: #5b6e7a;
+  --card: #ffffff;
+  --border: #e6dfd5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+header, main, footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header { padding-top: 40px; text-align: center; }
+header h1 { font-size: 2rem; margin: 0 0 8px; font-weight: normal; }
+header .tagline { color: var(--muted); font-style: italic; margin: 0; }
+
+nav { margin: 24px 0 8px; }
+nav a { margin: 0 12px; color: var(--accent); text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+
+main { padding-top: 24px; padding-bottom: 40px; }
+
+h2 { font-weight: normal; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-top: 40px; }
+
+a { color: var(--accent); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+
+.resources { list-style: none; padding: 0; }
+.resources li { margin: 0 0 18px; }
+.resources a { font-weight: bold; }
+.resources .note { display: block; color: var(--muted); font-size: 0.95rem; }
+
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  padding-bottom: 32px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}

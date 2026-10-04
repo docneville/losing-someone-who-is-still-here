@@ -75,3 +75,20 @@ _Add a brief overview of your project architecture_
 ## Conventions & Patterns
 
 _Add your project-specific conventions here_
+
+## About this site
+
+Companion website for the book *Losing Someone Who Is Still Here*, served at
+https://losingsomeonewhoisstillhere.com (domain registered at Namecheap).
+
+- **Hosting**: GitHub Pages from the `main` branch root, custom domain via the
+  root `CNAME` file (same setup as docneville/houstory). `.nojekyll` makes
+  Pages serve files as-is.
+- **No build step**: plain static HTML/CSS, no framework or bundler. Preview
+  with `python -m http.server 8080`.
+- **Edited by the author herself**, often in the GitHub web editor, so keep
+  the HTML simple and readable, and keep the `EDIT ME` / how-to comments
+  intact. Don't introduce tooling she would have to install.
+- **Reader resources** live in `resources.html` as `<ul class="resources">`
+  lists grouped under `<h2>` headings.
+- **Substack** integration is planned but deferred (see `bd ready`).
