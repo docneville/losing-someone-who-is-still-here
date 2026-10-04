@@ -1,11 +1,16 @@
-/* Site-wide styles. Change the colors here and every page updates. */
+/* Site-wide styles. Change the colors here and every page updates.
+   Colors and fonts are taken from the book cover. */
 :root {
-  --bg: #faf7f2;
-  --text: #2e2a26;
-  --muted: #6b635b;
-  --accent: #5b6e7a;
+  --sky: #6fa9d2;        /* cover sky blue */
+  --sky-deep: #4a87b0;   /* back cover blue */
+  --sage: #c9d3a6;       /* pale yellow-green in the cover sky */
+  --teal: #4e8b8c;       /* the ground strip at the bottom of the cover */
+  --teal-dark: #2f6566;
+  --bg: #f6f8f4;
+  --text: #24353d;
+  --muted: #5c6d73;
   --card: #ffffff;
-  --border: #e6dfd5;
+  --border: #dbe4e0;
 }
 
 * { box-sizing: border-box; }
@@ -14,49 +19,129 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Ubuntu", "Segoe UI", sans-serif;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-header, main, footer {
+h1, h2, h3, .site-title {
+  font-family: "Belleza", "Optima", "Candara", sans-serif;
+  font-weight: normal;
+}
+
+a { color: var(--teal-dark); }
+
+/* Top bar */
+.topbar {
+  background: var(--teal);
+  padding: 12px 20px;
+  text-align: center;
+}
+.topbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 14px;
+  letter-spacing: 0.03em;
+}
+.topbar a:hover { text-decoration: underline; }
+
+/* Big cover-style banner on the home page */
+.hero {
+  background: linear-gradient(180deg, var(--sky) 0%, var(--sky) 45%, var(--sage) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 64px 20px 56px;
+  border-bottom: 18px solid var(--teal);
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  line-height: 1.1;
+  margin: 0 auto 24px;
+  max-width: 12em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.hero .subtitle {
+  font-size: 1.15rem;
+  max-width: 32em;
+  margin: 0 auto 20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.hero .author { font-size: 1.1rem; margin: 0; letter-spacing: 0.04em; }
+
+/* Smaller banner for inner pages */
+.page-header {
+  background: var(--sky-deep);
+  color: #fff;
+  text-align: center;
+  padding: 36px 20px;
+  border-bottom: 10px solid var(--teal);
+}
+.page-header h1 { margin: 0; font-size: 2.2rem; }
+.page-header p { margin: 8px 0 0; opacity: 0.9; }
+
+main {
   max-width: 760px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 32px 20px 48px;
 }
 
-header { padding-top: 40px; text-align: center; }
-header h1 { font-size: 2rem; margin: 0 0 8px; font-weight: normal; }
-header .tagline { color: var(--muted); font-style: italic; margin: 0; }
+h2 {
+  color: var(--teal-dark);
+  font-size: 1.7rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin-top: 44px;
+}
 
-nav { margin: 24px 0 8px; }
-nav a { margin: 0 12px; color: var(--accent); text-decoration: none; }
-nav a:hover { text-decoration: underline; }
+.lead {
+  font-size: 1.3rem;
+  color: var(--sky-deep);
+  font-style: italic;
+}
 
-main { padding-top: 24px; padding-bottom: 40px; }
-
-h2 { font-weight: normal; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-top: 40px; }
-
-a { color: var(--accent); }
+.closing {
+  font-family: "Belleza", "Optima", sans-serif;
+  font-size: 1.5rem;
+  color: var(--teal-dark);
+  text-align: center;
+  margin: 36px 0;
+}
 
 .card {
   background: var(--card);
   border: 1px solid var(--border);
+  border-left: 5px solid var(--sky);
   border-radius: 8px;
   padding: 20px 24px;
   margin: 16px 0;
 }
 
+.button {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+}
+.button:hover { background: var(--teal-dark); }
+
+/* Resource lists */
 .resources { list-style: none; padding: 0; }
-.resources li { margin: 0 0 18px; }
+.resources li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 0 0 12px;
+}
 .resources a { font-weight: bold; }
 .resources .note { display: block; color: var(--muted); font-size: 0.95rem; }
 
 footer {
-  border-top: 1px solid var(--border);
-  padding-top: 16px;
-  padding-bottom: 32px;
-  color: var(--muted);
-  font-size: 0.9rem;
+  background: var(--teal);
+  color: #e6f0ee;
   text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
 }
