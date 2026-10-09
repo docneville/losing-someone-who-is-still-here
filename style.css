@@ -137,6 +137,7 @@ h2 {
 }
 .resources a { font-weight: bold; }
 .resources .note { display: block; color: var(--muted); font-size: 0.95rem; }
+.resources a[href^="tel:"] { white-space: nowrap; } /* keep phone numbers on one line */
 
 footer {
   background: var(--teal);
